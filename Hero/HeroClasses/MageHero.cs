@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleRPG.Hero.HeroClasses
 {
-	public class MageHero
+	public class MageHero : Hero
 	{
 	}
 }

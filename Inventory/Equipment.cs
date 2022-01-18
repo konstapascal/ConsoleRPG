@@ -1,16 +1,13 @@
 ﻿using ConsoleRPG.Items;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleRPG.Equipment
+namespace ConsoleRPG.Inventory
 {
 	public class Equipment
 	{
+		private string[] SlotTypes { get; init; } = { "Head", "Body", "Legs", "Weapon" };
 		public Dictionary<string, Item> EquipmentSlots { get; set; }
-		public string[] SlotTypes { get; init; } = { "Head", "Body", "Legs", "Weapon" };
 
 		public Equipment()
 		{
@@ -23,7 +20,7 @@ namespace ConsoleRPG.Equipment
 			}
 		}
 		
-		public int AddItem(Item item)
+		public int EquipItem(Item item)
 		{
 			throw new NotImplementedException();
 		}

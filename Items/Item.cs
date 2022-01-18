@@ -8,5 +8,8 @@ namespace ConsoleRPG.Items
 {
 	public abstract class Item
 	{
+		public string ItemName { get; set; }
+		public int ItemLevel { get; set; }
+		public string ItemSlot { get; set; }
 	}
 }

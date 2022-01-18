@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleRPG.Items.ArmorTypes
+namespace ConsoleRPG.Hero.Interfaces
 {
-	internal class MailArmor
+	public interface IDamaging
 	{
+		public int DealDamage();
 	}
 }

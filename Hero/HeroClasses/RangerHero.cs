@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleRPG.Hero.HeroClasses
 {
-	internal class RangerHero
+	public class RangerHero : Hero
 	{
 	}
 }

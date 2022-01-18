@@ -8,8 +8,6 @@ namespace ConsoleRPG.Items
 {
 	public class WeaponItem : Item
 	{
-		public double BaseDamage { get; set; }
-		public double AttacksPerSecond { get; set; }
-		public double DamagePerSecond { get; set; }
+		
 	}
 }
