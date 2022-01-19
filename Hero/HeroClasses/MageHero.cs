@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleRPG.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +15,18 @@ namespace ConsoleRPG.Hero.HeroClasses
 			BasePrimaryAttributes = new PrimaryAttributes() { Strength = 1, Dexterity = 1, Intelligence = 8 };
 			BasePrimaryAttributesGain = new PrimaryAttributes() { Strength = 1, Dexterity = 1, Intelligence = 5 };
 
-			TotalPrimaryAttributes = new PrimaryAttributes() { Strength = 1, Dexterity= 1, Intelligence = 8 };
-
 			AllowedWeaponTypes = new List<string> { WeaponType.WEAPON_STAFF, WeaponType.WEAPON_WAND };
 			AllowedArmorTypes = new List<string> { ArmorType.ARMOR_CLOTH };
 
 		}
 
 		// Methods
-		public override int DealDamage()
+		public override double CalculateDamage()
 		{
-			throw new NotImplementedException();
+			WeaponItem equippedWeapon = (WeaponItem) HeroEquipment.EquipmentSlots[Slots.SLOT_WEAPON];
+			double damage = equippedWeapon.DamagePerSecond * (1 + ((double) TotalPrimaryAttributes.Intelligence / 100));
+
+			return damage;
 		}
 
 	}
