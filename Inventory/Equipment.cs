@@ -20,6 +20,5 @@ namespace ConsoleRPG.Inventory
 		// Properties
 		public List<string> SlotTypes { get; init; } = new List<string>() { Slots.SLOT_HEAD, Slots.SLOT_BODY, Slots.SLOT_LEGS, Slots.SLOT_WEAPON };
 		public Dictionary<string, Item> EquipmentSlots { get; set; }
-
 	}
 }

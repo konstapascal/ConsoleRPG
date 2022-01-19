@@ -14,6 +14,7 @@ namespace ConsoleRPG.Hero.HeroClasses
 		{
 			BasePrimaryAttributes = new PrimaryAttributes() { Strength = 1, Dexterity = 7, Intelligence = 1 };
 			BasePrimaryAttributesGain = new PrimaryAttributes() { Strength = 1, Dexterity = 5, Intelligence = 1 };
+
 			AllowedWeaponTypes = new List<string> { WeaponType.WEAPON_BOW };
 			AllowedArmorTypes = new List<string> { ArmorType.ARMOR_LEATHER, ArmorType.ARMOR_MAIL };
 		}

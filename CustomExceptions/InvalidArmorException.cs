@@ -6,12 +6,7 @@ namespace ConsoleRPG
 	[Serializable]
 	internal class InvalidArmorException : Exception
 	{
-		public InvalidArmorException()
-		{
-		}
-
-		public InvalidArmorException(string message) : base(message)
-		{
-		}
+		public InvalidArmorException() { }
+		public InvalidArmorException(string message) : base(message) { }
 	}
 }

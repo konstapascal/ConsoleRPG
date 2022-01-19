@@ -16,6 +16,5 @@ namespace ConsoleRPG.Items
 
 		// Properties
 		public PrimaryAttributes Attributes { get; init; }
-
 	}
 }

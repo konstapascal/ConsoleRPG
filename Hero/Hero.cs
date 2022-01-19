@@ -3,26 +3,22 @@ using System.Text;
 using System;
 using ConsoleRPG.Items;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace ConsoleRPG.Hero
 {
 	public abstract class Hero
-	{
+{
 		// Constructor
-		protected Hero(string name)
-		{
-			Name = name;
-			Level = 1;
-			HeroEquipment = new Equipment();
-		}
+		protected Hero(string name) => Name = name;
 
 		// Properties
 		public string Name { get; init; }
-		public int Level { get; protected set; }
+		public int Level { get; protected set; } = 1;
 		public PrimaryAttributes BasePrimaryAttributes { get; set; }
 		public PrimaryAttributes BasePrimaryAttributesGain { get; init; }
 		public PrimaryAttributes TotalPrimaryAttributes { get { return CalculateTotalPrimaryAttributes(); } }
-		public Equipment HeroEquipment { get; init; }
+		public Equipment HeroEquipment { get; init; } = new Equipment();
 		public List<string> AllowedWeaponTypes { get; init; }
 		public List<string> AllowedArmorTypes { get; init; }
 		public double Damage { get { return CalculateDamage(); } }
@@ -69,7 +65,6 @@ namespace ConsoleRPG.Hero
 
 			return Level;
 		}
-
 
 		private PrimaryAttributes CalculateTotalPrimaryAttributes()
 		{
