@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleRPG.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +15,29 @@ namespace ConsoleRPG.Hero.HeroClasses
 			BasePrimaryAttributes = new PrimaryAttributes() { Strength = 5, Dexterity = 2, Intelligence = 1 };
 			BasePrimaryAttributesGain = new PrimaryAttributes() { Strength = 3, Dexterity = 2, Intelligence = 1 };
 
-			BasePrimaryAttributes = new PrimaryAttributes() { Strength = 5, Dexterity = 2, Intelligence = 1 };
-
 			AllowedArmorTypes = new List<string> { ArmorType.ARMOR_MAIL, ArmorType.ARMOR_PLATE };
 			AllowedWeaponTypes = new List<string> { WeaponType.WEAPON_AXE, WeaponType.WEAPON_HAMMER, WeaponType.WEAPON_SWORD };
 
 		}
 
 		// Methods
-		public override int DealDamage()
+		public override double CalculateDamage()
 		{
-			throw new NotImplementedException();
+			WeaponItem equippedWeapon = (WeaponItem) HeroEquipment.EquipmentSlots[Slots.SLOT_WEAPON];
+
+			double damagePerSecond;
+
+			if (equippedWeapon is null)
+				damagePerSecond = 1;
+
+			damagePerSecond = equippedWeapon.DamagePerSecond;
+
+			Console.WriteLine(damagePerSecond);
+			Console.WriteLine(TotalPrimaryAttributes.Strength);
+
+			double calculatedDamage = damagePerSecond * (1 + (double) TotalPrimaryAttributes.Strength / 100);
+
+			return calculatedDamage;
 		}
 	}
 }

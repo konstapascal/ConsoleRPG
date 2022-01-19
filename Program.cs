@@ -12,13 +12,21 @@ namespace ConsoleRPG
 
 			WarriorHero testWarrior = new WarriorHero("Guts");
 
-			testWarrior.LevelUp();
+			WeaponItem testAxe = new WeaponItem("Common Axe", 1, Slots.SLOT_WEAPON, WeaponType.WEAPON_AXE, new WeaponAttributes() { BaseDamage = 20, AttacksPerSecond = 1.5 });
+			ArmorItem testArmor = new ArmorItem("Common Plate", 1, Slots.SLOT_BODY, ArmorType.ARMOR_PLATE, new PrimaryAttributes() { Strength = 10 });
 
-			WeaponItem testAxe = new WeaponItem("Common Axe", 2, Slots.SLOT_WEAPON, WeaponType.WEAPON_AXE, new WeaponAttributes() { BaseDamage = 7, AttacksPerSecond = 1.1 });
 
 			testWarrior.EquipItem(testAxe, Slots.SLOT_WEAPON);
 
-			Console.WriteLine(testAxe.DamagePerSecond);
+			testWarrior.DisplayHeroStats();
+
+			testWarrior.EquipItem(testArmor, Slots.SLOT_BODY);
+
+			testWarrior.DisplayHeroStats();
+			testWarrior.LevelUp();
+
+			testWarrior.DisplayHeroStats();
+			testWarrior.LevelUp();
 		}
 	}
 }
