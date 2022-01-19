@@ -11,16 +11,18 @@ namespace ConsoleRPG.Hero
 		// Constructor
 		protected Hero(string name)
 		{
-			Name=name;
+			Name = name;
+			Level = 1;
+			HeroEquipment = new Equipment();
 		}
 
 		// Properties
 		public string Name { get; init; }
-		public int Level { get; protected set; } = 1;
+		public int Level { get; protected set; }
 		public PrimaryAttributes BasePrimaryAttributes { get; set; }
 		public PrimaryAttributes BasePrimaryAttributesGain { get; init; }
 		public PrimaryAttributes TotalPrimaryAttributes { get { return CalculateTotalPrimaryAttributes(); } }
-		public Equipment HeroEquipment { get; init; } = new Equipment();
+		public Equipment HeroEquipment { get; init; }
 		public List<string> AllowedWeaponTypes { get; init; }
 		public List<string> AllowedArmorTypes { get; init; }
 		public double Damage { get { return CalculateDamage(); } }
@@ -34,24 +36,20 @@ namespace ConsoleRPG.Hero
 
 			// Throws error if weapons item level is too high
 			if (isWeapon && item.ItemLevel > Level)
-				throw new InvalidWeaponException("Weapon level to high!");
-
+				throw new InvalidWeaponException("Weapon level too high!");
 			// Throws error if weapons type is not allowed to be equipped
 			if (isWeapon && !AllowedWeaponTypes.Contains(item.ItemType))
 				throw new InvalidWeaponException("Weapon type not allowed to be equipped!");
-
-			// Throws error if armors item level is too high
-			if (isArmor && item.ItemLevel > Level)
-				throw new InvalidArmorException("Armor level to high!");
-
-			// Throws error if armors type is not allowed to be equipped
-			if (isArmor && !AllowedArmorTypes.Contains(item.ItemType))
-				throw new InvalidArmorException("Armor type not allowed to be equipped!");
-
 			// Throws error if weapon is equipped in an armor slot
 			if (isWeapon && slot != Slots.SLOT_WEAPON)
 				throw new InvalidWeaponException("Cannot equip weapon in an armor slot!");
 
+			// Throws error if armors item level is too high
+			if (isArmor && item.ItemLevel > Level)
+				throw new InvalidArmorException("Armor level too high!");
+			// Throws error if armors type is not allowed to be equipped
+			if (isArmor && !AllowedArmorTypes.Contains(item.ItemType))
+				throw new InvalidArmorException("Armor type not allowed to be equipped!");
 			// Throws error if armor is equipped in a weapon slot
 			if (isArmor && slot == Slots.SLOT_WEAPON)
 				throw new InvalidWeaponException("Cannot equip armor in a weapon slot!");
@@ -60,8 +58,8 @@ namespace ConsoleRPG.Hero
 			HeroEquipment.EquipmentSlots[slot] = item;
 
 			// Return appropiate success string for item type
-			if (isWeapon) return "Weapon equipped successfully!";
-			return "Armor equipped successfully!";
+			if (isWeapon) return "New weapon equipped!";
+			return "New armor equipped!";
 		}
 
 		public int LevelUp()
