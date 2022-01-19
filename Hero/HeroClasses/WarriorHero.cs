@@ -17,7 +17,6 @@ namespace ConsoleRPG.Hero.HeroClasses
 
 			AllowedArmorTypes = new List<string> { ArmorType.ARMOR_MAIL, ArmorType.ARMOR_PLATE };
 			AllowedWeaponTypes = new List<string> { WeaponType.WEAPON_AXE, WeaponType.WEAPON_HAMMER, WeaponType.WEAPON_SWORD };
-
 		}
 
 		// Methods
@@ -25,16 +24,7 @@ namespace ConsoleRPG.Hero.HeroClasses
 		{
 			WeaponItem equippedWeapon = (WeaponItem) HeroEquipment.EquipmentSlots[Slots.SLOT_WEAPON];
 
-			double damagePerSecond;
-
-			if (equippedWeapon is null)
-				damagePerSecond = 1;
-
-			damagePerSecond = equippedWeapon.DamagePerSecond;
-
-			Console.WriteLine(damagePerSecond);
-			Console.WriteLine(TotalPrimaryAttributes.Strength);
-
+			double damagePerSecond = (equippedWeapon is null) ? 1 : equippedWeapon.DamagePerSecond;
 			double calculatedDamage = damagePerSecond * (1 + (double) TotalPrimaryAttributes.Strength / 100);
 
 			return calculatedDamage;

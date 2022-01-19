@@ -104,7 +104,7 @@ namespace ConsoleRPG.Hero
 
 			Console.WriteLine(heroStats.ToString());
 		}
-
+		
 		public abstract double CalculateDamage();
 	}
 }

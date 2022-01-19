@@ -17,17 +17,17 @@ namespace ConsoleRPG.Hero.HeroClasses
 
 			AllowedWeaponTypes = new List<string> { WeaponType.WEAPON_STAFF, WeaponType.WEAPON_WAND };
 			AllowedArmorTypes = new List<string> { ArmorType.ARMOR_CLOTH };
-
 		}
 
 		// Methods
 		public override double CalculateDamage()
 		{
 			WeaponItem equippedWeapon = (WeaponItem) HeroEquipment.EquipmentSlots[Slots.SLOT_WEAPON];
-			double damage = equippedWeapon.DamagePerSecond * (1 + ((double) TotalPrimaryAttributes.Intelligence / 100));
 
-			return damage;
+			double damagePerSecond = (equippedWeapon is null) ? 1 : equippedWeapon.DamagePerSecond;
+			double calculatedDamage = damagePerSecond * (1 + (double) TotalPrimaryAttributes.Intelligence / 100);
+
+			return calculatedDamage;
 		}
-
 	}
 }

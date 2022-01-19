@@ -6,9 +6,7 @@ namespace ConsoleRPG.Inventory
 {
 	public class Equipment
 	{
-		public List<string> SlotTypes { get; init; } = new List<string>() { Slots.SLOT_HEAD, Slots.SLOT_BODY, Slots.SLOT_LEGS, Slots.SLOT_WEAPON };
-		public Dictionary<string, Item> EquipmentSlots { get; set; }
-
+		// Constructor
 		public Equipment()
 		{
 			EquipmentSlots = new Dictionary<string, Item>();
@@ -18,5 +16,10 @@ namespace ConsoleRPG.Inventory
 				EquipmentSlots.Add(SlotTypes[i], null);
 			}
 		}
+		
+		// Properties
+		public List<string> SlotTypes { get; init; } = new List<string>() { Slots.SLOT_HEAD, Slots.SLOT_BODY, Slots.SLOT_LEGS, Slots.SLOT_WEAPON };
+		public Dictionary<string, Item> EquipmentSlots { get; set; }
+
 	}
 }
