@@ -2,7 +2,8 @@
 {
 	public struct WeaponAttributes
 	{
-		public double BaseDamage;
+		// Weapon related stats
+		public int BaseDamage;
 		public double AttacksPerSecond;
 	}
 }

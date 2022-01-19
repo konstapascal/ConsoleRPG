@@ -1,13 +1,13 @@
 ﻿namespace ConsoleRPG
 {
-	public struct WeaponType
+	public record WeaponType
 	{
-		public string WEAPON_AXE;
-		public string WEAPON_BOW;
-		public string WEAPON_DAGGER;
-		public string WEAPON_HAMMER;
-		public string WEAPON_STAFF;
-		public string WEAPON_SWORD;
-		public string WEAPON_WAND;
+		public static string WEAPON_AXE = "Axe";
+		public static string WEAPON_BOW = "Bow";
+		public static string WEAPON_DAGGER = "Dagger";
+		public static string WEAPON_HAMMER = "Hammer";
+		public static string WEAPON_STAFF = "Staff";
+		public static string WEAPON_SWORD = "Sword";
+		public static string WEAPON_WAND = "Wand";
 	}
 }

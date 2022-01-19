@@ -6,28 +6,17 @@ namespace ConsoleRPG.Inventory
 {
 	public class Equipment
 	{
-		private string[] SlotTypes { get; init; } = { "Head", "Body", "Legs", "Weapon" };
+		public List<string> SlotTypes { get; init; } = new List<string>() { Slots.SLOT_HEAD, Slots.SLOT_BODY, Slots.SLOT_LEGS, Slots.SLOT_WEAPON };
 		public Dictionary<string, Item> EquipmentSlots { get; set; }
 
 		public Equipment()
 		{
-
 			EquipmentSlots = new Dictionary<string, Item>();
 
-			for (int i = 0; i < SlotTypes.Length; i++)
+			for (int i = 0; i < SlotTypes.Count; i++)
 			{
-				EquipmentSlots[SlotTypes[i]] = null;
+				EquipmentSlots.Add(SlotTypes[i], null);
 			}
-		}
-		
-		public int EquipItem(Item item)
-		{
-			throw new NotImplementedException();
-		}
-
-		public int RemoveItem(Item item)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

@@ -1,10 +1,10 @@
 ﻿namespace ConsoleRPG
 {
-	public struct ArmorType
+	public record ArmorType
 	{
-		public string ARMOR_CLOTH;
-		public string ARMOR_LEATHER;
-		public string ARMOR_MAIL;
-		public string ARMOR_PLATE;
+		public static string ARMOR_CLOTH = "Cloth";
+		public static string ARMOR_LEATHER = "Leather";
+		public static string ARMOR_MAIL = "Mail";
+		public static string ARMOR_PLATE = "Plate";
 	}
 }
