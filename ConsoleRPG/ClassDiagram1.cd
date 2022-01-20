@@ -1,63 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ConsoleRPG.Hero.Hero">
-    <Position X="5.5" Y="1.25" Width="2.5" />
+    <Position X="6.5" Y="1.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>JAAAAACAAAAAACgAAAAAAAQBAAkAAAABIAAABAAAAQA=</HashCode>
       <FileName>Hero\Hero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Hero.HeroClasses.WarriorHero">
-    <Position X="2.75" Y="6" Width="1.75" />
+    <Position X="3" Y="6" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Hero\HeroClasses\WarriorHero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Hero.HeroClasses.MageHero">
-    <Position X="4.75" Y="6" Width="1.75" />
+    <Position X="5.5" Y="6" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Hero\HeroClasses\MageHero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Hero.HeroClasses.RangerHero">
-    <Position X="8.75" Y="6" Width="1.75" />
+    <Position X="10.5" Y="6" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Hero\HeroClasses\RangerHero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Hero.HeroClasses.RogueHero">
-    <Position X="6.75" Y="6" Width="1.75" />
+    <Position X="8" Y="6" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Hero\HeroClasses\RogueHero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Items.Item">
-    <Position X="12.25" Y="3" Width="1.75" />
+    <Position X="14" Y="2.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAABAAAgAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Inventory.Equipment">
-    <Position X="9" Y="2.5" Width="1.5" />
+    <Position X="10.5" Y="2.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Inventory\Equipment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Items.ArmorItem">
-    <Position X="11.5" Y="5.75" Width="1.5" />
+    <Position X="13" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\ArmorItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ConsoleRPG.Items.WeaponItem">
-    <Position X="13.5" Y="5.75" Width="1.5" />
+    <Position X="15.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Items\WeaponItem.cs</FileName>

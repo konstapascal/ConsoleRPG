@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e22b373e-999c-4ee0-894c-37b42cad9058": {
+      "ProjectGuid": "e22b373e-999c-4ee0-894c-37b42cad9058",
+      "DisplayName": "ConsoleRPG",
+      "ColorIndex": 0
+    },
+    "02536472-24f5-47b6-9fdf-2ec607c05f14": {
+      "ProjectGuid": "02536472-24f5-47b6-9fdf-2ec607c05f14",
+      "DisplayName": "ConsoleRPG.Tests",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
