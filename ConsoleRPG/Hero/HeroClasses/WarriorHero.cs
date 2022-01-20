@@ -22,6 +22,7 @@ namespace ConsoleRPG.Hero.HeroClasses
 		{
 			WeaponItem equippedWeapon = (WeaponItem) HeroEquipment.EquipmentSlots[Slots.SLOT_WEAPON];
 
+			// Calculate damage per second of weapon, 1 if nothing equipped
 			double damagePerSecond = (equippedWeapon is null) ? 1 : equippedWeapon.DamagePerSecond;
 			double calculatedDamage = damagePerSecond * (1 + (double) TotalPrimaryAttributes.Strength / 100);
 

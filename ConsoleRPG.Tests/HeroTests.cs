@@ -13,8 +13,10 @@ namespace ConsoleRPG.Tests
 			// Arrange
 			WarriorHero testHero = new WarriorHero("testName");
 			int expected = 1;
+
 			// Act
 			int actual = testHero.Level;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -26,8 +28,10 @@ namespace ConsoleRPG.Tests
 			WarriorHero testHero = new WarriorHero("testName");
 			testHero.LevelUp();
 			int expected = 2;
+			
 			// Act
 			int actual = testHero.Level;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -38,8 +42,10 @@ namespace ConsoleRPG.Tests
 			// Arrange
 			WarriorHero testHero = new WarriorHero("testName");
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 5, Dexterity = 2, Intelligence = 1 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -50,8 +56,10 @@ namespace ConsoleRPG.Tests
 			// Arrange
 			MageHero testHero = new MageHero("testName");
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 1, Dexterity = 1, Intelligence = 8 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -62,8 +70,10 @@ namespace ConsoleRPG.Tests
 			// Arrange
 			RangerHero testHero = new RangerHero("testName");
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 1, Dexterity = 7, Intelligence = 1 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -74,8 +84,10 @@ namespace ConsoleRPG.Tests
 			// Arrange
 			RogueHero testHero = new RogueHero("testName");
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 2, Dexterity = 6, Intelligence = 1 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -87,8 +99,10 @@ namespace ConsoleRPG.Tests
 			WarriorHero testHero = new WarriorHero("testName");
 			testHero.LevelUp();
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 8, Dexterity = 4, Intelligence = 2 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -100,8 +114,10 @@ namespace ConsoleRPG.Tests
 			MageHero testHero = new MageHero("testName");
 			testHero.LevelUp();
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 2, Dexterity = 2, Intelligence = 13 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -113,8 +129,10 @@ namespace ConsoleRPG.Tests
 			RangerHero testHero = new RangerHero("testName");
 			testHero.LevelUp();
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 2, Dexterity = 12, Intelligence = 2 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
@@ -126,8 +144,10 @@ namespace ConsoleRPG.Tests
 			RogueHero testHero = new RogueHero("testName");
 			testHero.LevelUp();
 			PrimaryAttributes expected = new PrimaryAttributes() { Strength = 3, Dexterity = 10, Intelligence = 2 };
+			
 			// Act
 			PrimaryAttributes actual = testHero.TotalPrimaryAttributes;
+			
 			// Assert
 			Assert.Equal(expected, actual);
 		}
