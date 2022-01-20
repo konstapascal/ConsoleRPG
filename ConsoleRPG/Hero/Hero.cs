@@ -5,6 +5,7 @@ using ConsoleRPG.Items;
 using System.Collections.Generic;
 using ConsoleRPG.Exceptions;
 using ConsoleRPG.Attributes;
+using ConsoleRPG.Exceptions.CustomExceptions;
 
 namespace ConsoleRPG.Hero
 {
@@ -25,6 +26,15 @@ namespace ConsoleRPG.Hero
 		public double Damage { get { return CalculateDamage(); } }
 
 		// Methods
+
+		/// <summary>
+		/// Equips provided item to the current character
+		/// </summary>
+		/// <param name="item">Item to be equipped</param>
+		/// <param name="slot">Slot in which to equip item</param>
+		/// <returns>Returns a success message</returns>
+		/// <exception cref="InvalidWeaponException">When weapon level is too high, weapon type is not allowed or slot is wrong</exception>
+		/// <exception cref="InvalidArmorException">When armor level is too high, armor type is not allowed or slot is wrong</exception>
 		public string EquipItem(Item item, string slot)
 		{
 			// Determine if item is weapon or armor
@@ -43,6 +53,10 @@ namespace ConsoleRPG.Hero
 			return "New armor equipped!";
 		}
 
+		/// <summary>
+		/// Levels up the current character by 1 and adds attributes
+		/// </summary>
+		/// <returns>Returns the new level</returns>
 		public int LevelUp()
 		{
 			// Increment level and increase attributes by the gain
@@ -52,6 +66,10 @@ namespace ConsoleRPG.Hero
 			return Level;
 		}
 
+		/// <summary>
+		/// Calculates the total primary attributes from both levels and items
+		/// </summary>
+		/// <returns>Returns total attributes</returns>
 		private PrimaryAttributes CalculateTotalPrimaryAttributes()
 		{
 			PrimaryAttributes attributesFromItems = new PrimaryAttributes();
@@ -75,6 +93,9 @@ namespace ConsoleRPG.Hero
 			return BasePrimaryAttributes + attributesFromItems;
 		}
 
+		/// <summary>
+		/// Displays the current characters name, level, attributes and damage
+		/// </summary>
 		public void DisplayHeroStats()
 		{  
 			StringBuilder heroStats = new StringBuilder();
@@ -90,6 +111,10 @@ namespace ConsoleRPG.Hero
 			Console.WriteLine(heroStats.ToString());
 		}
 		
+		/// <summary>
+		/// Calculate the characters damage based on his weapon and attributes
+		/// </summary>
+		/// <returns>Returns the calculated damage</returns>
 		public abstract double CalculateDamage();
 	}
 }
