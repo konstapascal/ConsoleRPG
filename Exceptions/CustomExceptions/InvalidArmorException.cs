@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
-namespace ConsoleRPG
+namespace ConsoleRPG.Exceptions.CustomExceptions
 {
-	[Serializable]
-	internal class InvalidArmorException : Exception
+	public class InvalidArmorException : Exception
 	{
 		public InvalidArmorException() { }
 		public InvalidArmorException(string message) : base(message) { }

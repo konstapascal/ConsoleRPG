@@ -1,4 +1,4 @@
-﻿namespace ConsoleRPG
+﻿namespace ConsoleRPG.Inventory
 {
 	public record Slots
 	{

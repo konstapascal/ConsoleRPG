@@ -3,14 +3,15 @@ using System.Text;
 using System;
 using ConsoleRPG.Items;
 using System.Collections.Generic;
-using System.Xml.Linq;
+using ConsoleRPG.Exceptions;
+using ConsoleRPG.Attributes;
 
 namespace ConsoleRPG.Hero
 {
 	public abstract class Hero
 {
 		// Constructor
-		protected Hero(string name) => Name = name;
+		public Hero(string name) => Name = name;
 
 		// Properties
 		public string Name { get; init; }
@@ -30,25 +31,9 @@ namespace ConsoleRPG.Hero
 			bool isWeapon = item.GetType() == typeof(WeaponItem);
 			bool isArmor = item.GetType() == typeof(ArmorItem);
 
-			// Throws error if weapons item level is too high
-			if (isWeapon && item.ItemLevel > Level)
-				throw new InvalidWeaponException("Weapon level too high!");
-			// Throws error if weapons type is not allowed to be equipped
-			if (isWeapon && !AllowedWeaponTypes.Contains(item.ItemType))
-				throw new InvalidWeaponException("Weapon type not allowed to be equipped!");
-			// Throws error if weapon is equipped in an armor slot
-			if (isWeapon && slot != Slots.SLOT_WEAPON)
-				throw new InvalidWeaponException("Cannot equip weapon in an armor slot!");
-
-			// Throws error if armors item level is too high
-			if (isArmor && item.ItemLevel > Level)
-				throw new InvalidArmorException("Armor level too high!");
-			// Throws error if armors type is not allowed to be equipped
-			if (isArmor && !AllowedArmorTypes.Contains(item.ItemType))
-				throw new InvalidArmorException("Armor type not allowed to be equipped!");
-			// Throws error if armor is equipped in a weapon slot
-			if (isArmor && slot == Slots.SLOT_WEAPON)
-				throw new InvalidWeaponException("Cannot equip armor in a weapon slot!");
+			// Throw any exception that could come up
+			CustomExceptionThrower.WeaponExceptionThrower(item, slot, isWeapon, Level, AllowedWeaponTypes);
+			CustomExceptionThrower.ArmorExceptionThrower(item, slot, isArmor, Level, AllowedArmorTypes);
 
 			// If all checks pass, equip the item
 			HeroEquipment.EquipmentSlots[slot] = item;
@@ -60,6 +45,7 @@ namespace ConsoleRPG.Hero
 
 		public int LevelUp()
 		{
+			// Increment level and increase attributes by the gain
 			Level++;
 			BasePrimaryAttributes += BasePrimaryAttributesGain;
 
@@ -70,17 +56,22 @@ namespace ConsoleRPG.Hero
 		{
 			PrimaryAttributes attributesFromItems = new PrimaryAttributes();
 			
+			// Get all slots but the weapon
 			List<string> SlotTypes = HeroEquipment.SlotTypes;
 			SlotTypes.Remove("Weapon");
 
+			// Increment all slots
 			for (int i = 0; i < SlotTypes.Count; i++)
 			{
-				ArmorItem currentItem = (ArmorItem)HeroEquipment.EquipmentSlots[SlotTypes[i]];
+				// Cast the current Item to ArmorItem
+				ArmorItem currentItem = (ArmorItem) HeroEquipment.EquipmentSlots[SlotTypes[i]];
 
-				if (!(currentItem is null) && (currentItem.GetType() == typeof(ArmorItem)))
+				// If an ArmorItem is equipped, add its attributes
+				if (!(currentItem is null))
 					attributesFromItems += currentItem.Attributes;
 			}
 			
+			// Return total attributes from character and items
 			return BasePrimaryAttributes + attributesFromItems;
 		}
 
@@ -88,6 +79,7 @@ namespace ConsoleRPG.Hero
 		{  
 			StringBuilder heroStats = new StringBuilder();
 
+			// Build the string with all the stats
 			heroStats.AppendLine("Character name: " + Name);
 			heroStats.AppendLine("Character level: " + Level);
 			heroStats.AppendLine("Strength: " + TotalPrimaryAttributes.Strength);

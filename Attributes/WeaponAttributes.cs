@@ -1,4 +1,4 @@
-﻿namespace ConsoleRPG
+﻿namespace ConsoleRPG.Attributes
 {
 	public struct WeaponAttributes
 	{

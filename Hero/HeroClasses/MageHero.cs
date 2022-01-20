@@ -1,9 +1,7 @@
-﻿using ConsoleRPG.Items;
-using System;
+﻿using ConsoleRPG.Attributes;
+using ConsoleRPG.Inventory;
+using ConsoleRPG.Items;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleRPG.Hero.HeroClasses
 {

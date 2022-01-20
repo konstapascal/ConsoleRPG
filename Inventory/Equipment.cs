@@ -1,5 +1,4 @@
 ﻿using ConsoleRPG.Items;
-using System;
 using System.Collections.Generic;
 
 namespace ConsoleRPG.Inventory
@@ -11,6 +10,7 @@ namespace ConsoleRPG.Inventory
 		{
 			EquipmentSlots = new Dictionary<string, Item>();
 
+			// Populate dictionary with nulls, representing no item for every slot
 			for (int i = 0; i < SlotTypes.Count; i++)
 			{
 				EquipmentSlots.Add(SlotTypes[i], null);
