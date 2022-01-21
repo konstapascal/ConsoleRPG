@@ -74,7 +74,7 @@ namespace ConsoleRPG.Hero
 		{
 			PrimaryAttributes attributesFromItems = new PrimaryAttributes();
 			
-			// Get all slots but the weapon
+			// Get all slot types but the weapon
 			List<string> SlotTypes = HeroEquipment.SlotTypes;
 			SlotTypes.Remove("Weapon");
 
@@ -88,9 +88,11 @@ namespace ConsoleRPG.Hero
 				if (!(currentItem is null))
 					attributesFromItems += currentItem.Attributes;
 			}
+
+			PrimaryAttributes totalPrimaryAttributes = BasePrimaryAttributes + attributesFromItems; 
 			
 			// Return total attributes from character and items
-			return BasePrimaryAttributes + attributesFromItems;
+			return totalPrimaryAttributes;
 		}
 
 		/// <summary>
